@@ -1,0 +1,36 @@
+version: '3'
+services:
+  solr:
+    image: nhan/solr:7.4
+    ports:
+      - "8983:8983"
+    volumes:
+      - dbdata:/opt/solr/server/solr/COR1
+    command: /opt/solr/bin/solr -force -f -m 1g
+    deploy:
+        replicas: 1
+        resources:
+          limits:
+            cpus: '0.1'
+            memory: 1G
+          reservations:
+            cpus: '0.001'
+            memory: 500M   
+volumes:
+  dbdata:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/opt/solr'
+
+# The /opt/solr folder is on the docker HOST. which is mapped to the folder /opt/solr/server/solr/COR1 in the CONTAINER
+# Remember to copy the COR1 folder to /opt/solr on the Docker HOST
+# The folder COR1 is bound to /otp/solr. Therefore, there is no data loss when we restart the container
+
+
+
+networks:
+    back-end:
+      
+      
