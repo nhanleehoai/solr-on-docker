@@ -59,13 +59,14 @@ You can browse on the Docker host machine OR refer to one of my guides on how to
 
 ## Create a sample COR
 
-Note that you must copy the folder COR1 to Docker host (Centosd 7 server) folder /opt/solr
+Note that you must copy the folder COR1 to Docker host (Centos 7 server) folder /opt/solr
 This folder is then mapped to the container folder /opt/solr/server/solr/COR1
 
 Therefore, when you create a new Core in the folder "COR1", all config files are available
 
 <img src="docs/06-cor1.png" />
  
+<img src="docs/07-check-cor1.png" />
 
  We have sucessfully created and run Solr 7.4 on Alpine linux!
  
