@@ -1,6 +1,6 @@
 FROM alpine:3.8
 
-MAINTAINER nonone <noone@orangelogic.com>
+MAINTAINER Nhan Le <nhanleehoai@yahoo.com>
 
 RUN apk --update add  curl wget gnupg bash libgcc && rm -rf /var/cache/apk/* && \
 curl -Ls https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.21-r2/glibc-2.21-r2.apk > /tmp/glibc-2.21-r2.apk && \
